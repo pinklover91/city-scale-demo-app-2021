@@ -65,7 +65,7 @@ namespace Immersal.Samples.Mapping
             float captureStartTime = Time.realtimeSinceStartup;
             float uploadStartTime = Time.realtimeSinceStartup;
 
-#if PLATFORM_LUMIN
+#if PLATFORM_LUMIN && UNITY_2020_1
             XRCameraImage image;
 #else
             XRCpuImage image;
@@ -73,7 +73,7 @@ namespace Immersal.Samples.Mapping
             ARCameraManager cameraManager = m_Sdk.cameraManager;
             var cameraSubsystem = cameraManager.subsystem;
 
-#if PLATFORM_LUMIN
+#if PLATFORM_LUMIN && UNITY_2020_1
             if (cameraSubsystem != null && cameraSubsystem.TryGetLatestImage(out image))
 #else
             if (cameraSubsystem != null && cameraSubsystem.TryAcquireLatestCpuImage(out image))
@@ -210,7 +210,7 @@ namespace Immersal.Samples.Mapping
 
         public override async void Localize()
         {
-#if PLATFORM_LUMIN
+#if PLATFORM_LUMIN && UNITY_2020_1
             XRCameraImage image;
 #else
             XRCpuImage image;
@@ -218,7 +218,7 @@ namespace Immersal.Samples.Mapping
             ARCameraManager cameraManager = m_Sdk.cameraManager;
             var cameraSubsystem = cameraManager.subsystem;
 
-#if PLATFORM_LUMIN
+#if PLATFORM_LUMIN && UNITY_2020_1
             if (cameraSubsystem != null && cameraSubsystem.TryGetLatestImage(out image))
 #else
             if (cameraSubsystem != null && cameraSubsystem.TryAcquireLatestCpuImage(out image))
@@ -298,7 +298,7 @@ namespace Immersal.Samples.Mapping
             ARCameraManager cameraManager = m_Sdk.cameraManager;
             var cameraSubsystem = cameraManager.subsystem;
 
-#if PLATFORM_LUMIN
+#if PLATFORM_LUMIN && UNITY_2020_1
             XRCameraImage image;
             if (cameraSubsystem.TryGetLatestImage(out image))
 #else
@@ -451,7 +451,7 @@ namespace Immersal.Samples.Mapping
             ARCameraManager cameraManager = m_Sdk.cameraManager;
             var cameraSubsystem = cameraManager.subsystem;
 
-#if PLATFORM_LUMIN
+#if PLATFORM_LUMIN && UNITY_2020_1
             XRCameraImage image;
             if (cameraSubsystem.TryGetLatestImage(out image))
 #else

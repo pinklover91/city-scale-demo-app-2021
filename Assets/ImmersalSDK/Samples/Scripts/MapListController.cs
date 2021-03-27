@@ -121,7 +121,7 @@ namespace Immersal.Samples
                 byte[] mapData = Convert.FromBase64String(result.b64);
                 Debug.Log(string.Format("Load map {0} ({1} bytes)", jobId, mapData.Length));
 
-                this.m_ARMap.LoadMap(mapData);
+                this.m_ARMap.LoadMap(mapData, jobId);
             };
 
             m_Jobs.Add(j.RunJobAsync());

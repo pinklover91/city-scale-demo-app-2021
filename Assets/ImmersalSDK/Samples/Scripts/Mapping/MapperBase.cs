@@ -462,7 +462,7 @@ namespace Immersal.Samples.Mapping
             Matrix4x4 rx = RotX(90 - lat);
             return rx * rz;
         }
-                
+
         Vector2 CompassDir(Camera cam, Matrix4x4 trackerToMap, double[] mapToEcef)
         {
             Vector3 a = trackerToMap.MultiplyPoint(cam.transform.position);
@@ -716,7 +716,8 @@ namespace Immersal.Samples.Mapping
                 PointCloudRenderer renderer = gameObject.AddComponent<PointCloudRenderer>();
                 renderer.CreateCloud(vector3Array, num);
                 renderer.mapHandle = mapHandle;
-                if (!pcr.ContainsKey(jobId)) {
+                if (!pcr.ContainsKey(jobId))
+                {
                     pcr.Add(jobId, renderer);
                 }
             }
